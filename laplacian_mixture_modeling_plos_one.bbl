@@ -1,0 +1,134 @@
+\begin{thebibliography}{10}
+
+\bibitem{ev96}
+Everitt BS.
+\newblock An introduction to finite mixture distributions.
+\newblock Statistical Methods in Medical Research;5:107--127.
+
+\bibitem{bishop}
+Bishop CM.
+\newblock Pattern recognition and machine learning.
+\newblock Springer; 2006.
+
+\bibitem{jordan06}
+McAuliffe JD, Blei DM, Jordan MI.
+\newblock Nonparametric empirical Bayes for the Dirichlet process mixture
+  model.
+\newblock Stat Comput. 2006;16:5--14.
+
+\bibitem{azran}
+Azran A, Ghahramani Z.
+\newblock Spectral methods for automatic multiscale data clustering.
+\newblock In: Computer Vision and Pattern Recognition, 2006 IEEE Computer
+  Society Conference on. vol.~1. IEEE; 2006. p. 190--197.
+
+\bibitem{njw}
+Ng AY, Jordan MI, Weiss Y.
+\newblock On spectral clustering: Analysis and an algorithm.
+\newblock In: Advances in neural information processing systems; 2002. p.
+  849--856.
+
+\bibitem{gould14}
+Gould S, Zhao J, He X, Zhang Y.
+\newblock Superpixel graph label transfer with learned distance metric.
+\newblock In: European Conference on Computer Vision. Springer; 2014. p.
+  632--647.
+
+\bibitem{pearson}
+Pearson K.
+\newblock Contributions to the mathematical theory of evolution.
+\newblock Philosophical Transactions of the Royal Society of London A.
+  1894;185:71--110.
+
+\bibitem{fasshauer2007meshfree}
+Fasshauer G.
+\newblock Meshfree approximation methods with MATLAB.
+\newblock World Scientific; 2007.
+
+\bibitem{dropseq}
+et~al EZM.
+\newblock Highly Parallel Genome-wide Expression Profiling of Individual Cells
+  Using Nanoliter Droplets.
+\newblock Cell. 2015;161:1202--1214.
+
+\bibitem{dropseqrev}
+Heath JR.
+\newblock Nanotechnologies for biomedical science and translational medicine.
+\newblock Proceedings of the National Academy of Sciences.
+  2015;112(47):14436--14443.
+
+\bibitem{pard93}
+Pardalos PM, Guisewite G.
+\newblock Parallel computing in nonconvex programming.
+\newblock Annals of Operations Research. 1993;43(2):87--107.
+
+\bibitem{communities}
+Porter MA, Onnela JP, Mucha PJ.
+\newblock Communities in networks.
+\newblock Notices of the AMS. 2009;56(9):1082--1097, 1164--1166.
+
+\bibitem{yang2015}
+Yang J, Leskovec J.
+\newblock Defining and evaluating network communities based on ground-truth.
+\newblock Knowledge and Information Systems. 2015;42(1):181--213.
+
+\bibitem{modularity}
+Lancichinetti A, Fortunato S.
+\newblock Limits of modularity maximization in community detection.
+\newblock Physical review E. 2011;84(6):066122.
+
+\bibitem{hitpredict}
+Patil A, Nakai K, Nakamura H.
+\newblock HitPredict: a database of quality assessed protein--protein
+  interactions in nine species.
+\newblock Nucleic acids research. 2010;39(suppl\_1):D744--D749.
+
+\bibitem{banush}
+Banushkina P, Schenk O, Meuwly M.
+\newblock Efficiency considerations in solving smoluchowski equations for rough
+  potentials.
+\newblock In: Computational Life Sciences. Springer; 2005. p. 208--216.
+
+\bibitem{pard}
+Pardalos PM, Shalloway D, Xue G.
+\newblock Optimization methods for computing global minima of nonconvex
+  potential energy functions.
+\newblock Journal of Global Optimization. 1994;4(2):117--133.
+
+\bibitem{korenblum}
+Korenblum D, Shalloway D.
+\newblock Macrostate data clustering.
+\newblock Physical Review E. 2003;67(5):056704.
+
+\bibitem{gleichpage}
+Gleich DF.
+\newblock PageRank beyond the Web.
+\newblock SIAM Review. 2015;57(3):321--363.
+
+\bibitem{shall96}
+Shalloway D.
+\newblock Macrostates of classical stochastic systems.
+\newblock The Journal of chemical physics. 1996;105(22):9986--10007.
+
+\bibitem{risken}
+Risken H.
+\newblock The Fokker Planck Equation.
+\newblock In: The Fokker-Planck Equation. Springer; 1996. p. 63--95.
+
+\bibitem{white}
+White BS, Shalloway D.
+\newblock Efficient uncertainty minimization for fuzzy spectral clustering.
+\newblock Physical Review E. 2009;80(5):056705.
+
+\bibitem{shi09}
+Shi T, Belkin M, Yu B.
+\newblock Data spectroscopy: Eigenspaces of convolution operators and
+  clustering.
+\newblock The Annals of Statistics. 2009;37:3960--3984.
+
+\bibitem{schi15}
+Schiebinger G, Wainwright MJ, Yu B, et~al.
+\newblock The geometry of kernelized spectral clustering.
+\newblock The Annals of Statistics. 2015;43(2):819--846.
+
+\end{thebibliography}

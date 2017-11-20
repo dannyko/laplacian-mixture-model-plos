@@ -1,0 +1,1056 @@
+% Template for PLoS
+% Version 3.4 January 2017
+%
+% % % % % % % % % % % % % % % % % % % % % %
+%
+% -- IMPORTANT NOTE
+%
+% This template contains comments intended
+% to minimize problems and delays during our production
+% process. Please follow the template instructions
+% whenever possible.
+%
+% % % % % % % % % % % % % % % % % % % % % % %
+%
+% Once your paper is accepted for publication,
+% PLEASE REMOVE ALL TRACKED CHANGES in this file
+% and leave only the final text of your manuscript.
+% PLOS recommends the use of latexdiff to track changes during review, as this will help to maintain a clean tex file.
+% Visit https://www.ctan.org/pkg/latexdiff?lang=en for info or contact us at latex@plos.org.
+%
+%
+% There are no restrictions on package use within the LaTeX files except that
+% no packages listed in the template may be deleted.
+%
+% Please do not include colors or graphics in the text.
+%
+% The manuscript LaTeX source should be contained within a single file (do not use \input, \externaldocument, or similar commands).
+%
+% % % % % % % % % % % % % % % % % % % % % % %
+%
+% -- FIGURES AND TABLES
+%
+% Please include tables/figure captions directly after the paragraph where they are first cited in the text.
+%
+% DO NOT INCLUDE GRAPHICS IN YOUR MANUSCRIPT
+% - Figures should be uploaded separately from your manuscript file.
+% - Figures generated using LaTeX should be extracted and removed from the PDF before submission.
+% - Figures containing multiple panels/subfigures must be combined into one image file before submission.
+% For figure citations, please use "Fig" instead of "Figure".
+% See http://journals.plos.org/plosone/s/figures for PLOS figure guidelines.
+%
+% Tables should be cell-based and may not contain:
+% - spacing/line breaks within cells to alter layout or alignment
+% - do not nest tabular environments (no tabular environments within tabular environments)
+% - no graphics or colored text (cell background color/shading OK)
+% See http://journals.plos.org/plosone/s/tables for table guidelines.
+%
+% For tables that exceed the width of the text column, use the adjustwidth environment as illustrated in the example table in text below.
+%
+% % % % % % % % % % % % % % % % % % % % % % % %
+%
+% -- EQUATIONS, MATH SYMBOLS, SUBSCRIPTS, AND SUPERSCRIPTS
+%
+% IMPORTANT
+% Below are a few tips to help format your equations and other special characters according to our specifications. For more tips to help reduce the possibility of formatting errors during conversion, please see our LaTeX guidelines at http://journals.plos.org/plosone/s/latex
+%
+% For inline equations, please be sure to include all portions of an equation in the math environment.  For example, x$^2$ is incorrect; this should be formatted as $x^2$ (or $\mathrm{x}^2$ if the romanized font is desired).
+%
+% Do not include text that is not math in the math environment. For example, CO2 should be written as CO\textsubscript{2} instead of CO$_2$.
+%
+% Please add line breaks to long display equations when possible in order to fit size of the column.
+%
+% For inline equations, please do not include punctuation (commas, etc) within the math environment unless this is part of the equation.
+%
+% When adding superscript or subscripts outside of brackets/braces, please group using {}.  For example, change "[U(D,E,\gamma)]^2" to "{[U(D,E,\gamma)]}^2".
+%
+% Do not use \cal for caligraphic font.  Instead, use \mathcal{}
+%
+% % % % % % % % % % % % % % % % % % % % % % % %
+%
+% Please contact latex@plos.org with any questions.
+%
+% % % % % % % % % % % % % % % % % % % % % % % %
+
+\documentclass[10pt,letterpaper]{article}
+\usepackage[top=0.85in,left=2.75in,footskip=0.75in]{geometry}
+
+% amsmath and amssymb packages, useful for mathematical formulas and symbols
+\usepackage{amsmath,amssymb}
+
+% Use adjustwidth environment to exceed column width (see example table in text)
+\usepackage{changepage}
+
+% Use Unicode characters when possible
+\usepackage[utf8x]{inputenc}
+
+% textcomp package and marvosym package for additional characters
+\usepackage{textcomp,marvosym}
+
+% cite package, to clean up citations in the main text. Do not remove.
+\usepackage{cite}
+
+% Use nameref to cite supporting information files (see Supporting Information section for more info)
+\usepackage{nameref,hyperref}
+
+% line numbers
+\usepackage[right]{lineno}
+
+% ligatures disabled
+\usepackage{microtype}
+\DisableLigatures[f]{encoding = *, family = * }
+
+% color can be used to apply background shading to table cells only
+\usepackage[table]{xcolor}
+
+% array package and thick rules for tables
+\usepackage{array}
+
+% create "+" rule type for thick vertical lines
+\newcolumntype{+}{!{\vrule width 2pt}}
+
+% create \thickcline for thick horizontal lines of variable length
+\newlength\savedwidth
+\newcommand\thickcline[1]{%
+  \noalign{\global\savedwidth\arrayrulewidth\global\arrayrulewidth 2pt}%
+  \cline{#1}%
+  \noalign{\vskip\arrayrulewidth}%
+  \noalign{\global\arrayrulewidth\savedwidth}%
+}
+
+% \thickhline command for thick horizontal lines that span the table
+\newcommand\thickhline{\noalign{\global\savedwidth\arrayrulewidth\global\arrayrulewidth 2pt}%
+\hline
+\noalign{\global\arrayrulewidth\savedwidth}}
+
+
+% Remove comment for double spacing
+%\usepackage{setspace}
+%\doublespacing
+
+% Text layout
+\raggedright
+\setlength{\parindent}{0.5cm}
+\textwidth 5.25in
+\textheight 8.75in
+
+% Bold the 'Figure #' in the caption and separate it from the title/caption with a period
+% Captions will be left justified
+\usepackage[aboveskip=1pt,labelfont=bf,labelsep=period,justification=raggedright,singlelinecheck=off]{caption}
+\renewcommand{\figurename}{Fig}
+
+% Use the PLoS provided BiBTeX style
+\bibliographystyle{plos2015}
+
+% Remove brackets from numbering in List of References
+\makeatletter
+\renewcommand{\@biblabel}[1]{\quad#1.}
+\makeatother
+
+% Leave date blank
+\date{}
+
+% Header and Footer with logo
+\usepackage{lastpage,fancyhdr,graphicx}
+\usepackage{epstopdf}
+\pagestyle{myheadings}
+\pagestyle{fancy}
+\fancyhf{}
+\setlength{\headheight}{27.023pt}
+\lhead{\includegraphics[width=2.0in]{PLOS-submission.eps}}
+\rfoot{\thepage/\pageref{LastPage}}
+\renewcommand{\footrule}{\hrule height 2pt \vspace{2mm}}
+\fancyheadoffset[L]{2.25in}
+\fancyfootoffset[L]{2.25in}
+\lfoot{\sf PLOS}
+
+%% Include all macros below
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\R}{\mathbb{R}}
+\DeclareMathOperator*{\argmin}{argmin}
+\DeclareMathOperator*{\mini}{minimize}
+%% END MACROS SECTION
+
+
+\begin{document}
+\vspace*{0.2in}
+
+% Title must be 250 characters or less.
+\begin{flushleft}
+{\Large
+\textbf\newline{Laplacian mixture modeling for network analysis and unsupervised learning on graphs} % Please use "sentence case" for title and headings (capitalize only the first word in a title (or heading), the first word in a subtitle (or subheading), and any proper nouns).
+}
+\newline
+% Insert author names, affiliations and corresponding author email (do not include titles, positions, or degrees).
+\\
+Daniel Korenblum\textsuperscript{1,*},
+\\
+\bigskip
+\textbf{1} Research Division, Nanobio.Md, San Francisco, CA, United States of America
+\bigskip
+
+% Insert additional author notes using the symbols described below. Insert symbol callouts after author names as necessary.
+%
+% Remove or comment out the author notes below if they aren't used.
+%
+% Primary Equal Contribution Note
+% \Yinyang These authors contributed equally to this work.
+
+% Additional Equal Contribution Note
+% Also use this double-dagger symbol for special authorship notes, such as senior authorship.
+% \ddag These authors also contributed equally to this work.
+
+% Current address notes
+\textcurrency Current Address: Research Division, Nanobio.Md, San Francisco, CA, United States of America % change symbol to "\textcurrency a" if more than one current address note
+% \textcurrency b Insert second current address
+% \textcurrency c Insert third current address
+
+% Deceased author note
+% \dag Deceased
+
+% Group/Consortium Author Note
+% \textpilcrow Membership list can be found in the Acknowledgments section.
+
+% Use the asterisk to denote corresponding authorship and provide email address in note below.
+* d@nanobio.md
+
+\end{flushleft}
+% Please keep the abstract below 300 words
+\section*{Abstract}
+\noindent Laplacian mixture models identify overlapping regions of influence in unlabeled graph and network data in a scalable and computationally efficient way, yielding useful low-dimensional representations.
+By combining Laplacian eigenspace and finite mixture modeling methods, they provide probabilistic dimensionality reductions or domain decompositions for a variety of input data types, including mixture distributions, feature vectors, and graphs or networks.
+Heuristic approximations for scalable high-performance implementations are described and empirically tested.
+Connections to PageRank and community detection in network analysis demonstrate the wide applicability of this approach.
+The origins of Laplacian mixture models derive from partial differential equations in physics, which are reviewed and summarized.
+Comparisons to other dimensionality reduction and clustering methods for challenging unsupervised machine learning problems are also discussed.
+% Please keep the Author Summary between 150 and 200 words
+% Use first person. PLOS ONE authors please skip this step.
+% Author Summary not valid for PLOS ONE submissions.
+%\section*{Author summary}
+%Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur eget porta erat. Morbi consectetur est vel gravida pretium. Suspendisse ut dui eu ante cursus gravida non sed %sem. Nullam sapien tellus, commodo id velit id, eleifend volutpat quam. Phasellus mauris velit, dapibus finibus elementum vel, pulvinar non tellus. Nunc pellentesque pretium %diam, quis maximus dolor faucibus id. Nunc convallis sodales ante, ut ullamcorper est egestas vitae. Nam sit amet enim ultrices, ultrices elit pulvinar, volutpat risus.
+
+\linenumbers
+
+% Use "Eq" instead of "Equation" for equation citations.
+\section*{Introduction}
+Extracting meaningful knowledge from large and nonlinearly-connected data structures is of primary importance for efficiently utilizing data.
+Big data problems (e.g. $> 1$ GB/s) often contain superpositions of multiple distinct processes, sources, or latent factors.
+Estimating or inferring the component distributions or statistical factors is called the mixture problem.
+
+Methods for solving mixture problems are known as mixture models \cite{ev96}, and in machine learning they are used to define Bayes classifiers  \cite{bishop}.
+Mixture models are a widely applicable pattern recognition and dimensionality reduction approach for extracting meaningful content from large and complex datasets.
+Only finite mixture models are described here, although countably or uncountably infinite numbers of mixture components are also possible \cite{jordan06}.
+In terms of dimensionality reduction methods, Laplacian mixture models provide global and non-hierarchical analyses of massive datasets using scalable algorithms.
+\subsection{Laplacian Eigenspace Methods}
+Eigensystems of Laplacian matrices are widely used by spectral clustering methods \cite{azran}. % and in \emph{spectral graph theory}
+Spectral clustering methods typically use the eigenvectors with small-magnitude eigenvalues as a basis for projecting data onto before applying some other clustering method on the projected item coordinates \cite{njw}.
+
+In addition to graph/network data, Laplacian eigenspace methods can be applied to both discrete observation data and also continuous mixture density function data as shown in section \ref{sec:results}.
+As Fig~\ref{fig:0} shows, feature vectors or item data are mapped to a graph via a distance or similarity measure, and mixture density data are mapped to a graph by
+\begin{figure}[!h]
+\caption{
+{\bf Laplacian mixture modeling flow, gray squares show input datatypes and their mapping to Laplacian matrices (black square).}
+Circles show processing steps, and the solid black square shows output model after globally optimizing the Laplacian eigenspace.}
+\label{fig:0}
+\end{figure}
+finite-difference approximations of the differential operator on a discrete grid or mesh.
+Both feature vector data and continuous mixture density data are mapped to graph data as a preprocessing step prior to spectral graph cluster analysis.
+For such applications, simple graphs are sufficient, meaning no self-loops or multiple edges of the same type are allowed.
+
+When clustering data items, pairwise similarity or distance measures describe the regions of data space or subgraphs that represent closely related items.
+In this context data are vectors, e.g. feature vectors in machine learning applications.
+Laplacian eigenspace methods fall into the class of pairwise distance based clustering methods when data vectors are input.
+It is the choice of this pairwise similarity or distance measure that is of utmost importance in creating accurate and useful results when generating Laplacian matrices from data items. One area of active research is in optimizing or learning the distance function based on some  training data \cite{gould14}.
+
+Negative Laplacian matrices are also known as transition rate matrices or (infinitessimal) generators of continuous-time Markov chains (CTMCs).
+For all practical purposes, assuming that the chains are irreducible, meaning there is a path connecting every pair of states or nodes in the corresponding graph, does not lose any generality.
+(Reducible chains can be broken into subchains and analyzed independently.)
+Finite-state CTMCs contain embedded discrete time Markov chains with related stochastic or Markov transition probability matrices with related properties to Laplacian matrices.
+Given the holding times for each state, the stochastic matrix of the embedded chain is equivalent to the corresponding Laplacian matrix for the CTMC.
+Both of these matrices share the same first right eigenvector (with different eigenvalues), known as the Perron-Frobenius (PF) eigenvector or stationary probability distribution of the chain.
+
+According to the Perron-Frobenius theorem, the PF eigenvector is always nonnegative and can be interpreted as a probability distribution.
+
+Laplacian matrices both define distributions by their Perron-Frobenius eigenvectors, and can also can be defined by distributions.
+This equivalence between distributions and Laplacian matrices provides a natural and useful bridge between probability distributions and Laplacian eigenspaces.
+The duality between Laplacian matrices and probability distributions can be used for the purposes of statistical analyses and unsupervised machine learning.
+
+Laplacian mixture models are one way of probabilistically solving the multiple Laplacian eigenvector problem, as section \ref{sec:methods} describes.
+They generate probabilistic mixture models directly from Laplacian eigenspaces by optimally combining other eigenvectors with the Perron-Frobenius eigenvector.
+\subsection{Mixture Models}
+Distinct component processes generate superpositions of overlapping component distributions when observed in aggregate, creating a mixture distribution.
+The mixture problem is not easy to generally solve in part because it is so open-ended and difficult to objectively define in real-world contexts.
+In 1894, Karl Pearson stated that \emph{the analytical difficulties, even for the case $n=2$ are so considerable, that it may be questioned whether the general theory could ever be applied in practice to any numerical case} \cite{pearson}.
+Current unmixing or separation algorithms still cannot predict the number of components directly from observations of the mixture without additional information, or else they are parametric approaches that restrict components to fixed functional forms which are often unrealistic assumptions, especially in high dimensional spaces \cite{jordan06}.
+
+Methods for separating the components of nonnegative mixtures of the form
+\begin{equation}
+f(x) = \sum_{k = 1}^{m} a_k f_k(x)\label{eq:fmm}
+\end{equation}
+are called mixture models, where $m \in \N$ is the number of mixture components and with $x \in \Omega$ an element of an index set e.g. $\Omega \subseteq \R^n$ in the continuous variable case or $\Omega \subseteq \mathbb{N}$ for the discrete case.
+All of the results presented here for the continuous variable cases carry over to the discrete cases by replacing integrals $\displaystyle \int_{x \in \Omega} \bullet\ dx$ with summations $\displaystyle \sum_{x \in \Omega} \bullet $ for numerical accessibility.
+
+Since all continuous problems must be discretized for numerical applications, the focus is on discrete variables $x$ with continuous problems saved for the appendix.
+For all practical problems, it is safe to assume $f(x)$ is normalized as a probability distribution without loss of generality.
+
+The $f_k(x)$ are known as the mixture components or component probability distributions of each independent process or signal source, and are also assumed to be normalized without loss of generality.
+The $a_k \in [0, 1]$ are the weights or mixing proportions summing to one and forming a discrete probability distribution $P(k) = a_k$, which is known as the class prior distribution in the context of probabilistic or Bayes classifiers \cite{bishop}.
+
+Finite mixture models can be used to define probabilistic classifiers and vice versa.
+From exact knowledge of $\{f, f_1, \dots, f_{m}, a_1, \dots, a_{m}\},$ the posterior conditional distribution of an optimal Bayes classifier for any observed $y \in \Omega$ can be expressed as
+\begin{align}
+P(k\mid y) &= \frac{P(y\mid k) P(k)}{P(y)} \label{eq:pclass}\\
+&= \frac{a_k f_k(y)}{f(y)},
+\end{align}
+forming a partition of unity over the space of observations or data \cite{fasshauer2007meshfree}.
+The component distributions $f_k(x)$ can be understood as the class conditional distributions $P(x\mid k)$ and $f(x)$ as the evidence $P(x)$ in the context of  Bayes classifiers and supervised machine learning.
+% \subsubsection{Partitions of unity}
+As probabilistic/Bayes classifiers $P(k\mid x)=\frac{a_k f_k(y)}{f(y)}$ form partitions of unity \eqref{eq:pclass} from finite mixture models \eqref{eq:fmm}, so do finite mixture models form partitions of unity as well.
+In other words, partitions of unity can be defined first, without any reference to finite mixture models \eqref{eq:fmm}, as
+\begin{equation}
+p_k(x) \equiv \frac{a^\prime_k f^\prime_k(x)}{\sum_k a_k f_k^\prime(x)} \label{eq:poudef}
+\end{equation}
+subject to the constraints
+\begin{equation}
+\begin{array}{cccc}
+\displaystyle \sum_{k = 1}^m a^\prime_k &=& 1 &\\
+\displaystyle \int_\Omega f^\prime_k(x) dx &=& 1 & k = 1, \dots, m.
+\end{array}\label{eq:poudefcon}
+\end{equation}
+
+To connect mixture models with partitions of unity, the mixture components $\{f_k(x)\}_{k = 1}^m$ and weights $\{a_k\}_{k = 1}^m$ from mixture models \eqref{eq:fmm} can be related to \eqref{eq:poudef} for $k=1, \dots, m$ according to
+\begin{equation}
+    \begin{array}{ccc}
+        a_k(x) &=& \displaystyle\int_\Omega p_k(x) f(x) dx\\
+        f_k(x) &=& a_k^{-1} p_k(x) f(x)\\
+\\
+    \end{array}
+    \label{eq:waf}
+\end{equation}
+with $\displaystyle \sum_{x \in \Omega} p_k(x) f(x)$ for discrete $\Omega$ cases.
+This explicitly shows the formal equivalence of partitions of unity \eqref{eq:poudef} as discriminative versions of finite mixture models \eqref{eq:fmm}.
+In this case, the partition of unity $\{p_k(x)\}_{k = 1}^m$ can be interpreted as $\{P(k\mid x)\}_{k = 1}^m$, the mixture component conditional probabilities.
+
+Partitions of unity \eqref{eq:poudef} do not explicitly involve $f(x)$ the mixture distribution, or require it as an input.
+In other words, the component conditional probabilities $\{p_k(x) = P(k\mid x)\}_{k = 1}^m$ can still be computed even if knowledge of $f(x)$ the underlying mixture distribution is not available or is not required.
+This makes the partition of unity form of mixture models \eqref{eq:poudef} very useful in practice, since they apply even in cases where estimating $f(x)$ is not relevant or available such as cluster analysis, graph partitioning, and domain decomposition.
+Therefore, mixture models can be considered as a special case of partitions of unity applied to the separation of mixture probability distributions.
+
+In applications such as cluster analysis or graph partitioning, unlabeled data are automatically assigned to various groups known as clusters to distinguish them.
+Clusters can be understood as unsupervised analogs of classes from supervised machine learning.
+In cluster analysis, computing a partitions of unity of the form \eqref{eq:poudef} provides a probabilistic or fuzzy clustering or partition.
+The components of the partition of unity $\{p_k(x)\}_{k = 1}^m$ can be interpreted as conditional probabilities over the clusters or partitions, analogous to the class conditional distributions \eqref{eq:pclass} of Bayes classifiers.
+
+For such problems the mixture components $\{f_k(x)\}$ are not relevant, and only the cluster conditional probabilities $\{p_k(x)\}$ are needed.
+Formally, they can be viewed as mixture models via \eqref{eq:poudef} where $f(x) = constant$ the uniform distribution over $\Omega$ the domain.
+Soft clusterings are most useful when insights into the global structures of data spaces or networks are of interest.
+Hard clustering algorithms, such as $k$-means, do not provide any information about the global, nonhierarchical relationships between items or nodes in a graph.
+Rather than being dichotomous as implied by their names, soft and hard clustering approaches are complementary, and may be used together in one analysis to answer different questions about the same dataset.
+\section*{Materials and methods}\label{sec:methods}
+Finite mixture models of the form \eqref{eq:fmm} are easy to understand and interpret due to their probabilistic definition.
+This motivates hybridizing finite mixture models and Laplacian eigenspace methods, as described in this section.
+\subsection{Notation}
+Let $\phi_i(x), i=0, \dots, N-1$ denote the right eigenvectors of $N \times N$ normal Laplacian matrices of simple connected weighted or unweighted graphs, and similarity for their continuous eigenfunction analogs where $N = \infty$.
+Since the Laplacian matrices are assumed to be normal, their right eigenvectors form a complete orthonormal basis over $\Omega$ the discrete or continuous domain.
+Assume that these eigenvectors are ordered according to ascending eigenvalue magnitude.
+The Laplcian mixture modeling algorithm estimates the true finite mixture distribution components $f_k(x)$, $k = 1, \dots, m$ from \eqref{eq:fmm} directly from $\{\phi_0, \dots, \phi_{m - 1}\}$ the first $m$ right eigenvectors of normal Laplacian matrices.
+For now, assume that $m$ is known or given as a constant Laplacian mixture models are determined directly from the, with $m \ll N$ in many dimensionality reduction problems. Section \ref{sec:results} describes methods for estimating $m$ using existing model selection techniques in cases where it is not known.
+
+The main input to the algorithm is a normal $N \times N$ Laplacian matrix, where $N$ is the number of data items or nodes in the corresponding graph.
+If a density function $f(x)$ is the input, the resulting Laplacian matrix is designed so that $f(x) \equiv \phi_0(x)$, the Perron-Frobenius or first Laplacian eigenvector, and the problem is to estimate $\{f_k(x)\}_{k = 1}^m$ the mixture components.
+Feature vector data can be converted into Laplacian matrix form using pairwise similarity or distance measures, in which case the problem is to estimate $\{p_k(x)\}_{k = 1}^m$ the conditional mixture probability estimates.
+Graph data are converted to Laplacian matrices via weighted adjacency matrices.
+
+The vector of transformed Laplacian mixture component distribution estimates $\hat f$ can be defined in terms of a nonlinear optimization problem for $M \in \mathrm{GL}(m) \subset \R^{m \times m}$, the square invertible $m \times m$ matrix of expansion coefficients.
+\subsection{Definition}\label{sec:lemmdef}
+Minimizing the error or non-determinicity of the model from a Bayes classifier standpoint \eqref{eq:pclass} serves as an objective for determining the optimal matrix $M^{*}$ having the least total overlap of the macrostate boundaries allowable by the subspace spanned by the selected right eigenvectors.
+% Since $0^\alpha = 0 \forall alpha \neq 0$ and $1^\alpha = 1 \forall \alpha \in \R$, nonzero powers don't affect perfectly binary or deterministic conditional probabilities.
+The sum of the expected values of the squares of the conditional probabilities $$\sum_{k = 1}^m \left\langle p^2_k(x) \right\rangle_{\phi_0}$$ equals one if and only if they are perfectly binary or deterministic.
+Therefore the deviation of the expected squares of the conditional probabilities from unity $1 - \sum_{k = 1}^m \left\langle p^2_k(x) \right\rangle_{\phi_0}$ serves as a measure of the squared error i.e. fuzziness, overlap, or nondeterminicity.
+Let the loss function $0 < L < 1$ represent this expected error or nondeterminicity i.e. areas of fuzziness or overlap where the conditional probabilities are non-binary,
+\begin{equation}
+L    \equiv 1 - \sum_{k = 1}^m \left\langle \hat p^2_k(x) \right\rangle_{\phi_0} \label{eq:loss}
+\end{equation}
+which is equivalent to the probabilistic classifier's expected error using a quadratic loss or cost function \cite{bishop}.
+($\int_\Omega \bullet dx$ can be replaced by $\sum_{x \in \Omega} \bullet$  in discrete cases.)
+This objective function definition connects Laplacian eigenspace methods and probabilistic/Bayes classifiers \eqref{eq:pclass} derived from finite mixture models.
+% It also shows why the transformation
+% Section \ref{sec:mmmdef} describes the relationship between \eqref{eq:wfmm} and \eqref{eq:pclass} in more detail.
+
+The minimum expected error condition
+\begin{equation}
+M^{*} \equiv \argmin_{M}L(M) \label{eq:mopt}
+\end{equation}
+subject to the partition of unity constraints
+\begin{align}
+\begin{array}{ccccc}
+\hat p_k(x) &\geqslant& 0,&\forall x \in \Omega,&\ k = 1, \dots, m\\
+\displaystyle \sum_k \hat p_k(x) &=& 1,&\forall x \in \Omega&
+\end{array} \label{eq:pou}
+\end{align}
+selects maximally crisp (non-overlapping) or minimally fuzzy (overlapping) decision boundaries among classifiers formed by the span of the selected right eigenvectors.
+This objective function attempts to minimize the expected overlap or model error between the component distributions of the mixture distribution $f(x) \equiv \phi_0(x)$ defined by the PF eigenvector of the input Laplacian matrix.
+Minimizing the loss $L(M)$ occurs over the matrix of expansion coefficients for the eigenspace spanned by the selected right eigenvectors $\{\phi_i\}_{i = 0}^{m - 1}$ which serve as an orthogonal basis.
+The eigenbasis provides linear inequality constriants defining a feasible region in terms of a convex hull over $M \in \mathrm{GL}(m)$ the expansion coefficient parameter space.
+
+%This leads to a form of \eqref{eq:wfmm} derived from nonphysical or statistical mixture distributions $f(x) \equiv \phi_0(x)$:
+Therefore
+\begin{equation}
+\hat f_k(x; M^{*}) \equiv \hat a_k^{-1}(M^{*}) \hat p_k(x; M^{*}) f(x) \label{eq:fw}
+\end{equation}
+provides the following definition of a \emph{Laplacian mixture model} via \eqref{eq:waf}:
+\begin{equation}
+f(x) = \sum_{k = 1}^m \hat a_k(M^{*}) \hat f_k(x; M^{*}),\label{eq:mmm}
+\end{equation}
+where $M^{*}$ solves \eqref{eq:mopt} and \eqref{eq:pou}, a linear-constrained concave quadratic optimization problem.
+\subsection{Global Optimization}\label{sec:gopt}
+In terms of probabilistic classifiers, the loss function $L(M)$ represents the mean squared error of the probabilistic classifier derived from the mixture model specified by each value of $M$.
+By minimizing $L(M)$, Laplacian mixture models provide spectrally regularized minimum mean squared error separations for a variety of input data types, as shown in Fig~\ref{fig:0}.
+
+For any viable value for $m$ the number of mixture components, the column vector valued function
+\begin{equation*}
+\hat p \equiv \left(\begin{array}{ccc}\hat p_1(x; M) & \cdots & \hat p_m(x; M) \end{array}\right)^T
+\end{equation*}
+is numerically optimized over $M$ to compute the Laplacian mixture model.
+The optimal $\hat p$ is determined via global optimization of $L(M)$ over the set of coordinate transformation matrices $M$ satisfying the partition of unity constraints $\eqref{eq:pou}$ to compute $M^*$ the globally-optimized model parameters.
+
+In matrix notation, any feasible $\hat p$ can be written in terms of $M$ and the column vector of basis functions
+\begin{equation}
+\omega \equiv \left(
+  \begin{array}{c}
+    \frac{\phi_0(x)}{\sqrt{\phi_0(x)}}\\ \\
+    \frac{\phi_1(x)}{\sqrt{\phi_0(x)}}\\
+    \vdots\\
+    \frac{\phi_{m - 1}(x)}{\sqrt{\phi_0(x)}}
+  \end{array}
+\right)\label{eq:omega}
+\end{equation}
+as
+\begin{equation*}
+\hat p = M \omega
+\end{equation*}
+subject to
+\begin{align*}
+M^T e &= e_1\\
+M \omega (x) &\geqslant 0\ \forall x,
+\end{align*}
+where $e = \left( \begin{array}{cccc} 1 & 1 & \cdots & 1\end{array}\right)^T$ and $e_1 = \left( \begin{array}{cccc}1 & 0 & \cdots & 0\end{array}\right)^T$ are $m \times 1$ column vectors.
+
+Now the objective function $L(M)$ can be expressed in terms of $\omega$ and $f(x) \equiv \phi_0(x)$ as
+\begin{align*}
+L &= 1 - \sum_{k = 1}^m \left\langle \hat p_k^2(x) \right\rangle_{\phi_0}\\
+&= 1 - \left\langle \omega^T M^T M \omega \right\rangle_{\phi_0}\\
+% &= 1 - \int_\Omega \left( \psi^T M^T M \psi \right)(x)\ dx\\
+&= 1 - \sum_{i, j = 0}^{m - 1} \left(M^T M\right)_{ij} \underbrace{\int_\Omega \phi_i(x) \phi_j(x) dx}_{\delta_{ij}} \\
+&= 1 - \mathrm{tr}\ M^T M,
+\end{align*}
+a concave quadratic function where $\mathrm{tr}\ M^T M$  is equal to $\| M \|_F^2$, the squared Frobenius norm of $M$ the eigenbasis transformation matrix.
+
+These results allow the linearly constrained global optimization problem for $M^{*}$ to be stated as
+\begin{equation}
+\begin{array}{cc}
+\displaystyle \mini_M & 1 - \| M \|_F^2 \\
+& \\
+\mathrm{subject\ to} & \\
+& \begin{array}{cccc} M^T e &=& e_1& \\ \left(M \phi\right)(x) &\geqslant& 0& \forall x \\ M &\in& \mathrm{GL}(m). &\end{array}
+\end{array}\label{eq:gopt}
+\end{equation}
+The linear inequality constraints $M \phi \geqslant 0$ encode all of the problem-dependent data from the input Laplacian matrix via
+\begin{equation*}
+\phi = \left( \begin{array}{cccc} \phi_0(x) & \phi_1(x) & \cdots & \phi_{m - 1}(x) \end{array} \right)^T.
+\end{equation*}
+
+This linearly constrained concave quadratic problem is an archetypal example of an NP-hard problem because of the combinatorial number of vertex solutions defined by the convex polytope formed by the constraints.
+Statistically useful solutions are not guaranteed to exist and even then they do, approximating the solution to \ref{eq:gopt} requires specialized numerical algorithms.
+
+Theoretical worst-case analysis suggests that exact solutions to this NP-hard global optimization problem are not possible.
+Nevertheless, useful approximate solutions have been developed for density function estimate, feature/vector, and graph data during the course of numerical testing.
+Numerical examples are presented next to demonstrate the flexibility, versalitility, and other features of Laplacian mixture modeling approaches.
+\section*{Results and Discussion}\label{sec:results}
+The NP-hard nature of the linearly-constrained concave quadratic global optimization problem makes exhaustively computing all possible models is impractical, due to the geometric growth with increasing model dimension in the number of vertices in the convex hull defined by the linear inequality-constraints.
+Despite this theoretical obstacle, empirical testing suggests that for most applications, accurate solutions sampling strategies can be scalably implemented for approximating the global optimizer on large datasets.
+In part, this is due to the detailed information contained in each of the factors or mixture components identified due to their fuzzy/overlapping/probabilistic form.
+
+Laplacian mixture model components identify large-scale regions of the graph in such a way that each region covers the entire graph.
+Each mixture component, factor, or dimension provides information about the entire graph whose weighting favors the region it corresponds to.
+As demonstrated in this section, less than 12 components or dimensions are usually required even on relatively large graphs, making the NP-hard aspects of the global optimization problem circumventable.
+
+Optimizing the sampling strategy for approximately solving the linearly-constrained concave quadratic global optimization problem is an open problem not discussed here.
+Since they are not data-dependent, and for the sake of consistency when comparing different runs, the global optimization search parameters were precomputed and stored in a lookup table.
+By using a lookup table, computing these parameters does not contribute any significant overhead to the optimization runtimes.
+The current strategy is to gain confidence in the reliability of the approximant by locating the same one multiple times using different search parameters by slightly oversampling the solution space.
+
+Because of numerical limits of finite-precision arithmetic, it is impossible to perfectly enforce the constraint that the transformation matrix $M^*$ be invertible.
+One way of dealing with this issue is to apply an even stricter constraint that often makes sense for data analysis applications.
+This constraint requires that all factors contain at least one item whose probability for that factor is larger than all other factors.
+
+This means that hard-thresholding the conditional factor probabilities must not create any degenerate clusters with zero items assigned to them.
+It's a reasonable criterion for applications where each factor represents an independent observable signal generating process.
+Therefore, the optimal solution is chosen by minimizing the loss function $L(M)$ over all non-degenerate models.
+Many of the computed solutions are degenerate, an aspect of the NP-hard optimization problem that is partially circumvented in practical situations using heuristics to accurately approximate the solution.
+
+In this section, several numerical examples are presented to illustrate some Laplacian mixture model sampling strategies and demonstrate their efficacy on both synthetic and real-world problems.
+The results show high levels of performance across a range of problem types without encountering problems such as numerical instability or sensitivity to small variations of tunable parameters.
+All model computation run-times were less than 24 hours using {\sc Matlab} on a dual 2.40 GHz {\sc Intel Xeon E5-2640} CPU running the 64-bit {\sc Windows 10} operating system with 128GB of RAM.
+\subsection*{Data Clustering/Fusion}
+The first example involves single-cell expression profile data using a technique known as Drop-seq that can easily generate over 10,000 measurements per 50,000-cell tissue sample \cite{dropseq}.
+Cell contents are suspended within droplets, and the mRNAs are captured on microbeads with unique DNA barcodes that allow single-cell analyses to be done in parallel without losing the association to the individual cells captured \cite{dropseqrev}.
+Tissues such as the retina have specialized and differentiated cell types that have been identified as histologically distinct, and single-cell expression data potentially provides a means of matching cell types with unique gene expression features.
+One of the issues in the field is its exploratory nature, requiring unsupervised machine learning approaches since there are no ``ground truth'' data or labels available (E.Z. Macosko, personal communication).
+
+Probabilistic models can infer whether some set of low-dimensional factors can explain the various expression profiles measured.
+This example represents one of the first nonhierarchical analyses of single-cell expression and potentially paves the way for useful biological insights into the structure of cellular expression patterns.
+
+To ensure a connected graph, every item was required to have at least one large similarity value equal to the 99-th percentile value over all pairs.
+I.e., if an item's max similarity was less than this value, it was set to it, connecting all of the items with at least one other item and preventing disconnected graphs.
+
+The data are cleared from memory after the sparse similarity matrix is computed to conserve resources.
+Once the small-magnitude eigenvector estimates for $\{\phi_i(x)\}_{i = 0}^{m_{max}}$ are computed using a sparse iterative solver, the similarity matrix may also be discarded while the subsequent models are computed.
+Data are reduced to a lower dimensionality before fitting the model, making Laplacian mixture models efficient in terms of memory resources and storage after the initial preprocessing steps are completed.
+The maximum number of eigenvectors to compute is data and application dependent, and there are almost as many different conceptions and definitions of communities in network analysis as there are problem areas.
+
+There are many possible choices of normalization for the measurements prior to fitting or learning the model in an unsupervised manner.
+Euclidean distances are well tested, but in multidimensional spaces they are sensitive to the choice of normalization.
+The normalization used in \cite{dropseq} contains features that may adversely affect statistical analyses that involve Euclidean distances.
+Fig~\ref{fig:1} compares the denoised unit-max and unit-median normalizations for the 49299 cells (columns) and 24657 genes (rows) used here to the normalization in \cite{dropseq}.
+
+The bottom row \textbf{c} shows the median of the unnormalized data columns, corresponding to retina cell types, for reference to line up the relevant features in the top two rows.
+Rows \textbf{a} and \textbf{b} show the max and median of each cell type, respectively.
+The left column shows the Drop-seq normalization and the middle and right columns respectively show the denoised unit-max and unit-median normalizations used here.
+
+Note the alignment of the local minima of the unnormalized medians shown in row \textbf{c} with the artificial trends shown in rows \textbf{a} and \textbf{b} of the left column.
+In particular, the median shows a value of 1 except at the instabilities whenever the local minima in the bottom row occur.
+These spikes in the median shown in the middle row are enhanced by quantization noise, which can also adversely affect Euclidean distance based analyses.
+This shows that the Drop-seq normalization may be overly and contains outliers whenever the unnormalized median reaches a local minimum.
+
+The top row of the left column shows that the trend in the max of the normalized values creates outliers around the local minima shown in the bottom row.
+This suggests that their normalization may potentially be amplifying noise to accentuate the nonlinear trend shown row \textbf{a} of the left column.
+Dividing by small values is well known to increase numerical instabilities using finite-precision arithmetic.
+\begin{figure}[!h]
+\caption{
+{\bf Comparison of normalization in \cite{dropseq} (left column) to the denoised unit normalization used here (right column).}
+The bottom row \textbf{c} shows the median of the same unnormalized columns that were input into both normalization procedures.
+The middle row \textbf{b} shows the median of the normalized values for each column of data, where columns correspond to retina cell types.
+Row \textbf{a} shows the maximum normalized value for each column of data.}
+\label{fig:1}
+\end{figure}
+By contrast, rows \textbf{a} and \textbf{b} of the middle and right columns show the denoised normalizations used here.
+The same denoising step was used for both unit-max and unit-median normalizations.
+This removes the additive offset and gain and then setting hard unit artifacts to zero, eliminating outliers and noise.
+The unit-median normalization was obtained from the denoised unit-max normalization by dividing all columns by the median of their nonzero values.
+As the left and right columns if the top row of Fig~\ref{fig:1} show, this makes range more similar to the original Drop-seq normalization.
+The top row of Fig~\ref{fig:1} shows that the unit-max or unit-median normalizations (middle and right columns, respectively) are distributed within a smaller range than the Drop-seq normalization (left column).
+
+Unlike the Drop-seq normalization, the denoised unit-max and unit-median normalizations are unquantized and cannot be interpreted as representing physical molecular copy numbers.
+Denoising makes the data more appropriate for Euclidean distance based data analysis because of its sensitivity to outliers.
+This makes the denoised normalizations potentially better for statistical analyses involving Euclidean distances, which become more sensitive to outliers as the dimensionality of the embedding space increases.
+
+Fig~\ref{fig:1} suggests that they may provide better results when using Euclidean distances for pattern recognition because the distribution is more compact.
+This justifies using the unquantized denoised normalization shown on the middle and right columns for computing Laplacian mixture models.
+%2-through-8 factor models were computed for both normaliations and silhouette scores were estimated.
+In order to compare between the denoised unit-max and denoised unit-median normalizations, the residuals of a linear fit to the plot of silhouette score vs. objective value were compared.
+Fig~\ref{fig:2} shows the silhouette scores for the 2-through-8 factor Laplacian mixture models generated for the (denoised) unit-max (\textbf{a}) and (denoised) unit-median (\textbf{b}) normalizations.
+The dotted line shows the robust linear fit identified from the silhouette scores, indicating a negatively sloping trend suggesting that higher factor models may be overfitting.
+Linear fit residuals for the unit-max normalization (\textbf{a}) are noticeably smaller in magnitude than those for the unit-median normalization suggesting it may be more stable for Euclidean-distance based network analyses.
+Therefore all subsequent results shown here made use of the denoised unit-max normalization.
+\begin{figure}[!]
+\caption{
+{\bf 2-through-8 factor model silhouette score estimates computed by averaging over 10 sets of randomly subsampled cells (2000 cells per sample) vs. optimal objective value for (\textbf{a}) unit-max and (\textbf{b}) unit-median denoised normalizations.}
+Dashed lines indicates robust linear fit computed using iteratively reweighted least squares.
+The 3-factor silhouette scores (yellow) were consistently outlying above the linear trend shown by the dashed line for both normalizations, and the 7-factor solution (blue) is the highest dimensional model with positive residual.
+}
+\label{fig:2}
+\end{figure}
+After computing the denoised unit-max normalization, 66 columns were found to have constant values and were removed prior to clustering, and 8653 (35\%) of denoised rows were found to be duplicates and removed.
+An input data matrix of 49,233-by-16,004 values was left for computing the Laplacian matrix that was input into the global optimization algorithm determining the corresponding Laplacian mixture model.
+
+The $k$-nearest neighbor method with corresponding parameter $k_{NN}$ was used to set the maximum number of nonzero entries in any row or column of the resulting pairwise similarity matrix.
+This ensures sparsity and prevents instabilities in the Laplacian eigenvector structure.
+
+Empirically when a useful model can be computed, it is typically part of a sequence of models beyond which an acceptable (nondegenerate) solutions cannot be found.
+The rigorous mathematical explanation for this has not been fully understood yet but is discussed in more detail in section \ref{sec:conclusion}.
+Since no 9-factor solutions were found, the search was truncated at $m=8$.
+Fig~\ref{fig:3} shows both unit-max and unit-median normalizations for the optimized 2-through-8 factor models computed using the modified Frank-Wolfe heuristic described in \cite{pard93}.
+\begin{figure}[!h]
+\caption{
+{\bf Sequence of models for the Drop-seq retina cell profiles published on GEO (ID GSE63472).}
+Top row shows scatterplot matrices colored by thresholded cluster assignment index for 2-8 factor models.
+Middle row shows corresponding factor conditional probability line plots sorted by max assignment index.
+Diagonal blocks on images in the bottom row show the corresponding sorted input similarity matrix revealing hidden structure in the unlabeled data.
+}
+\label{fig:3}
+\end{figure}
+Since the 7-factor solution showed the highest dimensionality with positive residual, it was chosen to visualize in more detail.
+
+Fig~\ref{fig:4} shows a zoom in on the scatterplot matrix for the $m=7$ solution shown in the top row of Fig~\ref{fig:3}.
+\begin{figure}[!h]
+\caption{
+{\bf Grouped scatterplot matrix of conditional probabilities for the 7-dimensional unit-max normalized Drop-seq retina cell Laplacian mixture model.}
+Axes are autoscaled inside the interval [0, 1] for all panels.
+Horizontal axes are aligned by columns, and vertical axes are aligned by rows.
+Colors indicate max probability assignment index showing the corresponding hard clustering generated by thresholding.
+Hard clustering assignment counts were for the overlapping modules detected.
+% Although the shapes are non-Gaussian the colors seem visually reasonable, indicating that potentially informative overlapping communities were detected.
+}
+\label{fig:4}
+\end{figure}
+Subsequent hierarchical or other hard-clustering algorithms  can be applied using these 7-dimensional conditional probabilities as feature vectors in order to generate non-overlapping clusters or communities if needed.
+
+Colors indicate hard cluster assignments generated by thresholding appear visually reasonable, suggesting that potentially informative overlapping communities were detected.
+Unlike many other community detection algorithms based on global optimization, Laplacian mixture models can identify communities with sizes that are different orders of magnitude.
+
+The grouped scatterplots for the 1st-vs-2nd conditional probabilities from the top row of Fig~\ref{fig:4} were plotted separately in Fig~\ref{fig:5}.
+These highlight the differences between the models in terms of their ability to separate the data into potentially informative structures identified in the Drop-seq retinal cell profiles.
+\begin{figure}[!h]
+\caption{
+{\bf Grouped scatterplots of conditional probabilities for components 1 vs. 2  from the 3-through-8 factor unit-max normalized Drop-seq retina cell Laplacian mixture models.}
+Plots are in order of ascending model dimension (3 through 8) from left-to-right, top-to-bottom.
+Colors indicate max probability assignment index showing the corresponding hard clustering generated by thresholding.
+Axes are autoscaled inside the interval [0, 1] for all panels.
+}
+\label{fig:5}
+\end{figure}
+From a signal processing and graph partitioning standpoint, higher factor numbers provide more fidelity and parallelization at the expense of compression ratio.
+Once such a sequence of models has been computed, standard model selection techniques from machine learning and statistics are directly applicable.
+The problem of model selection will not be dealt with in detail here since the focus is to demonstrate the basic approach.
+Once ground-truth data are available, these models can be selected for biological usefulness.
+\subsection*{Graph/Network Analysis}
+Unlike data clustering using symmetric item parwise-similarity matrices as input, graph clustering accepts weighted adjacency matrices that are often not symmetric but can be symmetrized.
+Biological networks, social patterns, and the World Wide Web are just a few of the many real world problems that can be mathematically represented and topologically studied in terms of community detection \cite{communities}.
+
+Generally, network community detection tries to infer functional communities from their distinct structural patterns \cite{yang2015}.
+Functional definitions of network communities are based on common function or role that the community members share.
+Examples of functional communities are interacting proteins that form a complex, or a group of people belonging to the same social circle.
+
+Modularity is one quantity that, when maximized, provides a measure of communities potentially having different properties such as node degree, clustering coefficient, betweenness, centrality, etc., from that of the average network.
+Because modules of many different sizes often occur, the potential limits of multiresolution modularity and all other methods using global optimmization have been suggested by \cite{modularity}.
+In particular, methods based on global optimization have been suspected of being incapable of finding communities at many different sizes or scales simultaneously.
+
+Although Laplacian mixture models are a global optimization type method, they are inherently multiscale since higher dimensional eigenspaces encode multiresolution dynamics from a Markov process interpretation.
+In order to illustrate the promise of using Laplacian mixture models to provide useful global, nonhierarchical views of large graphs, the \emph{E. coli} genome was analyzed as a test problem.
+
+\emph{E. coli} is a bacterial model organism in biology that has a relatively small genome but (like all genomes) one that still contains many transcribed regions with unknown functions.
+Using interactome data provided by the HitPredict protein-protein interaction database \cite{hitpredict}, one large connected component was identified for analysis, containing 3257 out of 3351 total genes/proteins.
+
+In order to prepare the weighted adjacency matrix for the analysis, the top $k_{min}$ connections were strengthened using the .99th quantile over all weights, and then a nearest-neighbor cutoff of $k_{NN}=125$ was applied.
+Next, rows of the weighted adjacency matrix were normalized to sum to one, to reduce the influence of proteins with stronger connections on average.
+Finally, because protein-protein interactions are mutual by nature, the matrix was symmetrized by taking the elementwise maximum between it and its transpose.
+
+To select appropriate values of $k_{min}$ and $k_{NN}$, a grid search was performed by computing all five-factor models over the ranges $k_{min}=3, \dots, 5$ and $k_{NN} = 1, \dots, 192$, where 192 is the maximum degree for the entire graph.
+The largest cluster size after hard thresholding by maximum conditional probabilities was plotted as shown in Fig~\ref{fig:6}.
+\begin{figure}[!h]
+\caption{
+{\bf Max cluster size of 5-factor models vs. $k_{NN}$ for \emph{E. coli} protein protein interaction data.}
+Colors correspond to different values of $k_{min}$.
+The plot shows that $k_{min}=4$ was the lowest value to show a reasonably large size for the 2nd-largest cluster after hard thresholding the conditional probabilities.
+}
+\label{fig:6}
+\end{figure}
+For this dataset, a sequence of 2-through-7 factor solutions was found using $k_{min}=4$ and $k_{NN}=\infty$, keeping all of the edges from the original dataset.
+Fig~\ref{fig:7} provides the same three views of the sequence of models as for the Drop-seq analysis above.
+Since the primary input was interaction data and no pairwise distances were computed, the silhouette scores are not available.
+\begin{figure}[!h]
+\caption{
+{\bf \emph{E. coli} interactome analysis (3257 proteins with 20239 pairwise interactions) showing 2-through-7 factor models.}
+Top panel shows grouped scatterplot matrices, middle row shows conditional probability line plots, and bottom panel shows corresponding graph adjacency matrices sorted by max conditional probability value.
+}
+\label{fig:7}
+\end{figure}
+Standard model selection techniques can be applied at this point, but are not performed here since the focus is on demonstrating Laplacian mixture modeling approaches.
+It is possible to gain some insight into model quality by examining the contributions of the individual model components to the squared loss or uncertainty score.
+Table \ref{tab:1} lists the component contributions to the loss function, with lower values being more favorable.
+\begin{table}[!ht]
+\renewcommand{\arraystretch}{1.3}
+\begin{adjustwidth}{-2.25in}{0in}
+\caption{
+{\bf Component losses of Laplacian mixture models for the \emph{E. coli} interactome network dataset.}
+}
+\centering
+\begin{tabular}{l|l|l|l|l|l|l|l}
+  \multicolumn{1}{c}{} & \multicolumn{7}{c}{component index}\\
+  dimensionality & \multicolumn{1}{|c|}{1} & \multicolumn{1}{c|}{2}  & \multicolumn{1}{c|}{3}  & \multicolumn{1}{c|}{4}  & \multicolumn{1}{c|}{5}  & \multicolumn{1}{c|}{6}  & \multicolumn{1}{c}{7} \\
+  \thickhline % \hhline{|=|=|=|}
+  2 & 0.912 & 0.016   &   &  &  &  &\\ \hline
+  3 & 0.840 & 0.355 & 0.576 &  &  &  & \\ \hline
+  4 & 0.824 & 0.510 & 0.904& 0.431&  &  &\\ \hline
+  5 & 0.473& 0.519& 0.901& 0.823& 0.895&  & \\ \hline
+  6 & 0.478& 0.943& 0.489& 0.824& 0.924& 0.890\\ \hline
+  7 & 0.864& 0.924 & 0.907& 0.935& 0.673& 0.956& 0.361\\ \hline
+\end{tabular}
+\label{tab:1}
+\end{adjustwidth}
+\end{table}
+The 6-factor model was the only one having two components less than 0.5 and all components less than 0.95.
+Its hard-thresholded sizes for this model's components were 1869, 1362, 11, 7, 6, and 2.
+Different orders of magnitude component sizes suggest the ability to detect multiscale communities despite belonging to the class of global optimization type methods.
+The next steps in developing this method could include delving into the possible biological significance of the patterns identified by Laplacian mixture models in an unsupervised way by analyzing the \emph{Homo sapiens} interactome.
+% In response to these criticisms, the 10th DIMACS challenge created categories combining graphs with clusters optimized for different objectives into a single test.
+% One issue with network analysis is that different modules can exist at different scales of the network.
+\subsection*{Density Estimation}\label{sec:density}
+Nonparametric mixture density separation is a challenging problems in statistics.
+In the context of mixture density function separation or unmixing problems, Laplacian mixture models fall into the class of partial differential equation (PDE)-based methods.
+The connections of Laplacian mixture models to PDE ``coarse-graining'' methods are described in more detail in the appendix.
+
+These differential equations allow Laplacian eigenspaces to be defined from input mixture density estimates as described below.
+The resulting Laplacian mixture models define globally optimized mixture component estimates directly from the spectral information contained in the discretized PDE.
+
+This synthetic mixture density separation example allows unambiguous evaluation of the performances of different tuning parameter choices.
+For the first example, a randomized three-component mixture $f(x) \propto f_1(x) + f_2(x) + f_3(x)$ was constructed, consisting of one component made from a mixture of three radial basis functions with randomized covariance transforms: Gaussians, Laplace distributions, and hyperbolic-secant functions.
+Since these components do not share any common parametrizations, using any one class of distribution to compute the unmixing will result in errors.
+This simple yet nontrivial example provides a test of the accuracy of the nonparametric Laplacian mixture modeling approach for nonparametric density function unmixing.
+that include additional smoothness or regularity assumptions.
+
+Discretized density function values are taken as input for Laplacian mixture model computation via direct approximation of the Smoluchowski equation as described in
+\ref{sec:dapprox}. As explained in \cite{banush},  the input mixture density estimate $f(x)$ is uniformly sampled on a discrete grid or lattice of points using neighbor indices $I_i, i=1, \dots, N.$
+where $\beta \in (0, \infty)$ acts as a scaling parameter with the interpretation of inverse absolute temperature in statistical physics.
+Non-boundary off-diagonal Laplacian matrix values are then set according to
+\begin{equation}
+q_{ij} = \left\{
+    \begin{array}{cc}
+    \exp{\left[ \frac{\beta}{2}\log \frac{f(x_i)}{f(x_j)}\right]}, & i < j \in I_i \\
+    \exp{\left[ \frac{\beta}{2} \log \frac{f(x_j)}{f(x_i)} \right] }, & i > j \in I_i \\
+    0, & \mathrm{otherwise}.
+    \end{array}
+\right.
+\end{equation} % Code for generating up the input data for this problem has been published via Github at ???.
+Fig~\ref{fig:8} shows an image of $f(x)$ evaluated at $40,000$ Cartesian gridpoints $\{x_i: x_i \in [-10, 10]^2\}_{i = 1}^{200}$ in two dimensions with colors
+indicating the value of $f(x)$ at each point.
+ \begin{figure}[!h]
+ \caption{
+ {\bf Gaussian/Laplace/hyperbolic-secant mixture density function surface plot colored by probability density.}
+ Each of the three separable components were constructed by
+ adding randomly generated anisotropic radial functions with either Gaussian, Laplacian, or hyperbolic-secant radial profiles. Finally, these randomized components were
+ superimposed to generate the final mixture distribution shown here.}
+ \label{fig:8}
+ \end{figure}
+Algorithm performance can be improved by tuning the $\beta$ parameter. The topological structure of macrostate splitting as $\beta$ increases from sufficiently small nonzero value towards $\infty$ has been useful for solving challenging global optimization problems \cite{pard}.
+Such homotopy-related aspects of macrostate theory are not explored here for the sake of brevity.
+
+Since the true solution was known for this test problem, the relative error vs. $\beta$ was optimized with a one-dimensional grid search as shown in Fig~\ref{fig:9}.
+ \begin{figure}[!h]
+ \caption{
+ {\bf Relative error of the $m=3$ Laplacian mixture model for the Gaussian/Laplace/hyperbolic-secant mixture test problem vs. $\beta$.}
+ Minimum value of $\beta=2.6$ indicated by flanking by datatips.
+ }
+ \label{fig:9}
+ \end{figure}
+Fig~\ref{fig:10} shows the optimized Laplacian mixture model for this test problem.
+ \begin{figure}[!h]
+ \caption{
+ {\bf Optimally-scaled $\beta=2.6$ Laplacian mixture model components for the Laplace (red)/hyperbolic-secant (green)/Gaussian (blue) 2-D test problem.}
+ Row a: unthresholded Laplacian mixture model components,
+ Row b: hard-thresholded components,
+ Row c: original (unmixed) components. Column 2 of Table \ref{tab:2} lists the corresponding mean squared errors.}
+ \label{fig:10}
+ \end{figure}
+Rows a and b of Fig~\ref{fig:10} appear acceptable with no visible mixing across components.
+Column 2 of Table \ref{tab:2} shows the relative errors for the probabilistic/unthresholded and hard-thresholded optimal $\beta=2.6$ solutions.
+Notice that hard-thresholding these components along their decision boundaries increases their error value compared to the original soft/probabilistic/fuzzy model.
+\begin{table}[!ht]
+\begin{adjustwidth}{-2.25in}{0in}
+\caption{
+{\bf Relative errors of Laplacian mixture models for the Gaussian/Laplace/hyperbolic-secant mixture density function separation/unmixing test problem.}
+}
+\centering
+\begin{tabular}{l|l|l}
+  \multicolumn{1}{c}{} & \multicolumn{2}{c}{$\beta$}\\
+  & \multicolumn{1}{|c|}{1} & \multicolumn{1}{c}{2.6} \\
+  \thickhline
+  no threshold   & 0.2078 & 0.0541 \\ \hline
+  hard threshold & 0.1803 & 0.0718 \\ \hline
+\end{tabular}
+\label{tab:2}
+\end{adjustwidth}
+\end{table}
+\section*{Conclusion}\label{sec:conclusion}
+Laplacian mixture models are a new tool for probabilistic/fuzzy spectral clustering and graph/network analysis because they nonhierarchically identify large separable regions and their interconnections.
+This provides high level soft partitions or dissections of big/massive data in their entirety without using any iterative/localized seed points.
+Their versatility and flexibility come at the cost of their computational and model selection challenges.
+Since their original formulation in \cite{korenblum}, many implementation challenges have been overcome and their connections to other Laplacian eigenspace methods have been developed, leading to the current reformulation including new loss functions and notation.
+
+Many possible models can be computed and model selection is an important consideration in order to select the subset of models that are most appropriate for a given application.
+In some applications such as compression or denoising, minimizing the number of components, partitions, clusters, or factors is more important than perfect reproduction of the original signal.
+Other applications such as recovery of a reference signal might benefit from choosing the largest number of factors that are computationally feasible.
+The optimal choice model may also be constrained by relative to available resources for a given application.
+Model selection is application dependent and the examples presented here may not provide the best results for every problem but may be useful as a guide for future studies.
+
+Laplacian eigenspaces impose constraints on the space of possible models that can be defined, providing a form of spectral regularization.
+In the context of data clustering, eigenspace structures are determined by the choice of distance or similarity measure and the choice of parameters used for this measure.
+For graph/network analysis, the process of computing a weighted adjacency matrix can be adjusted to fine-tune the corresponding Laplacian eigenspace structure.
+Applications involving unmixing mixture distribution function estimates can tune a parameter in the corresponding partial differential equation used to define the Laplacian matrix.
+
+Another potential application not demonstrated in the examples section includes more accurate information retrieval, search, and recommender systems.
+The PageRank or Google algorithm and its personalized or localized variants have become standard methods in these application areas \cite{gleichpage}.
+Originally, PageRank was used for ranking search results according to overall graph centrality score as given by the Perron-Frobenius eigenvector.
+The original PageRank algorithm provided a scalable and practical method for large graph datasets such as the World Wide Web, but nodes with similar centrality scores might not belong to the same location in the graph.
+Later, personalized and localized variants of the original PageRank algorithm were developed to address this issue, but introduce bias from the choice of seed nodes or locations and lose the global breadth of the original PageRank method.
+Laplacian mixture models may provide a regional PageRank variant, refining the original PageRank centrality scores according to the regions of the graph encoded by the mixture components, a possibility left for future work.
+
+Regardless of the application or type of input data structure, optimizing the structure of Laplacian eigenspaces can be challenging to do manually and may be difficult to fully automate.
+While Laplacian mixture models are nonparametric in terms of the data-dependent functions their eigenspaces support, in practice there are tuning parameters involved for processing raw input data.
+Several strategies for semi-automatically optimizing the Laplacian eigenspace structure were presented here, and more work in this area will be done in the future.
+
+Laplacian eigenspaces explain all of the nonequilibrium dynamics defined by the Markov chain generated by the corresponding Laplacian matrix, and hence have dynamic interpretations.
+They also have physical interpretations, where the PF eigenvector represents a fixed point of the differential equation from a dynamic systems perspective.
+The physical and dynamic systems interpretations of Laplacian eigenpaces complement their statistical and algebraic interpretations, revealing new connections between ideas from previously separate fields.
+Laplacian mixture models are an example of how combining ideas from physics, and statistics provides valuable new data analysis algorithms, where many connections remain to be found.
+
+During the global optimization step, many more models are computed and then only a subset (often one) is selected from these samples.
+Different loss functions can affect which solution(s) are accepted from the output of the global optimization algorithm, and the quadratic loss function used here can be modified freely depending on the application details.
+The squared loss function has been empirically verified to provide reasonably good models for a wide variety of data inputs, and similarly validating other loss functions would be of value.
+It also generates a linearly-constrained concave quadratic global optimization problem which has been well-studied in the literature and can be approximately solved with high accuracy for certain convex hull geometries.
+
+Future studies will focus on empirically developing a better understanding of how the geometry of the convex hull formed by the linear inequality constraints relates to the statistical qualities of the resulting models.
+Perhaps one day this story will circle back to its mathematical origins in Perron-Frobenius theory and create a picture connecting mathematics, physics, statistics, and machine learning.
+An intuitive formal theory to guide the development has been presented here, but the rigorous theory is incomplete.
+%\section*{Conclusion}
+% \section*{Supporting information}
+\section*{Acknowledgments}
+I sincerely thank David Shalloway, Walter Murray, and Michael Saunders for their instruction and advice, Panos Pardalos for suggesting the use of the modified Frank-Wolfe heuristic, and to David Gleich for helpful discussions.
+This research was supported in part by the Bayes Impact nonprofit organization, \texttt{http://bayesimpact.org}.
+\section*{Appendix}
+\subsection*{Macrostates}
+The original formulation of Laplacian mixture models comes from the definition of macrostates of classical stochastic systems, in equation (24) of \cite[page 9990]{shall96}, restated as
+\begin{equation}
+\psi_0(x) = \sum_{k = 1}^m p_k \Phi_k(x).\label{eq:mxpn}
+\end{equation}
+where the coordinate vector $R$ from the original statement has been replaced by $x$ and $k$ replaces the index $\alpha$, to match the notation used here.
+The $\psi_i(x) \equiv \phi_i(x) / \sqrt{\phi_0(x)}, i=0, \dots, N$ are equivalent to the Laplacian eigenfunctions.
+The mixture components $\Phi_k(x)$ were originally defined by equation (26) of \cite{shall96}, after substituting $\alpha \leftarrow k$ as in \eqref{eq:mxpn}, as
+\begin{equation*}
+\Phi_k(x; M) = \sum_{i = 0}^{m - 1} M_{k i} \psi_i(x).
+\end{equation*}
+
+Multiplying both sides by $\psi_0(x)$ to match the definition
+\begin{equation}
+  \hat f_k(x) \equiv \psi_0(x) \Phi_k(x) \label{eq:fhatdef}
+\end{equation}
+recovers the form of \eqref{eq:fmm}, a finite mixture model, in terms of the Laplacian eigenspace $\{\phi(x)_i\}_{i = 0}^m$.
+
+Macrostates were originally created to rigorously define both the concept of metastability and also the physical mixture component distributions based on slow and fast time scales in the relaxation dynamics of nonequilibrium distributions to stationary states \cite{shall96}.
+Mixture models are used for linearly separating these stationary or Boltzmann distributions in systems with nonconvex potential energy landscapes where minima on multiple size scales occur, e.g. high-dimensional overdamped drift-diffusions, such as macromolecules in solution.
+Proteins folding, unfolding, and aggregating in aqueous solution are one type of biological macromolecule that can be described in terms of overdamped drift-diffusions \cite{shall96}.
+
+Transitions between states belonging to different components of a mixture occur on relatively slow timescales in such systems, making them appear as the distinct discrete states of a finite-state continuous time Markov process when measured over appropriate timescales.
+Such systems are called \emph{metastable} \cite{risken, shall96}.
+
+In the macrostate definition, the variable $x$ is continuous and the Markov process is a continuous-state, continuous-time type known as a drift-diffusion in physics.
+Mathematically, drift-diffusions are described as a type of continuous-time Markov process analogous to CTMCs, and samples or stochastic realizations of drift-diffusions are described by systems of stochastic differential equations known as \emph{Langevin equations} \cite{risken}.
+For the purposes of using Laplacian mixture models, it is sufficient to know that the eigenvectors of the Laplacian matrix are analogous to the eigenfunctions of Smoluchowski operators.
+\subsection*{Smoluchowski Equations}
+The Laplacian mixture component estimates $\hat f_k(x)$ are defined as expansions of $\{\phi_i(x)\}_{i = 0}^{m - 1}$ the Laplacian eigenvectors.
+For continuous mixture density functions, there is a continuous-space partial differential equation (PDE) analog of Laplacian matrices known as drift-diffusion or Smoluchowski operators \cite{risken}.
+
+% Smoluchowski equations are a type of Markov process having equilibrium distributions that can be separated into mixture components using finite mixture models.
+
+Smoluchowski equations have the form
+\begin{equation}
+\frac{\partial P(x, t; \beta)}{\partial t} = D \nabla \cdot e^{-\beta V(x)} \nabla e^{\beta V(x)} P(x, t; \beta)\label{eq:smol} % \eqref{eq:smol}
+\end{equation}
+and belong to a class of reversible continuous-time, continuous-state Markov processes used to describe multiscale and multidimensional physical systems that can exhibit metastability \cite{risken}.
+
+% Understanding the connection between Smoluchowski equations of metastable systems and finite mixture models requires the theory of \emph{macrostates} of classical stochastic systems.
+
+The potential energy function $V(x)$ determines the deterministic drift forces acting on ensemble members i.e. sample paths or realizations of this stochastic process and can often be viewed as a fixed parameter that defines the system structure.
+The drift forces bias the temporal evolution of initial distributions $P(x, 0)$ to flow towards regions of lower energy as $t$ increases compared to free diffusion (Brownian motion).
+
+Technically there is a different Smoluchowski equation for each distinct choice of $V(x)$.
+Hence the plural form should be used generally although this is often overlooked in the literature.
+\subsection*{Smoluchowski Operators}
+The elliptic differential operator
+\begin{equation}
+L_0 \equiv D \nabla \cdot e^{-\beta V(x)} \nabla e^{\beta V(x)}\label{eq:L0} % \eqref{eq:L}
+\end{equation}
+has $e^{-\beta V(x)}$ as an eigenfunction with eigenvalue zero, also called the stationary state or unnormalized Boltzmann distribution.
+It is easy to evaluate $L_0 \left[ e^{-\beta V(x)}\right]$ directly to verify that it equals zero, satisfying the eigenvalue equation.
+
+$L_0$ is a normal operator and therefore a similarity transform $S^{-1} L_0 S$ to a self adjoint form $L$ exists \cite{risken}.
+$S$ has the simple form of a multiplication operator with kernel $e^{-\frac{1}{2}\beta V(x)}$, giving
+\begin{equation}
+L \equiv D e^{ \frac{1}{2}\beta V(x)} \nabla \cdot e^{-\beta V(x)} \nabla e^{ \frac{1}{2}\beta V(x)}\label{eq:L} = \left[\sqrt{D} \left(\nabla - \frac{\beta}{2} \nabla V \right) \right] \cdot \left[ \sqrt{D} \left( \nabla + \frac{\beta}{2} \nabla V \right) \right]. % \eqref{eq:L}
+\end{equation}
+
+The stationary state of $L$ from equation \eqref{eq:L} is denoted
+\begin{equation}
+\psi_0(x) \equiv e^{{ -\frac{\beta}{2} V(x)}} \label{eq:psi0}
+\end{equation}
+and is used along with other eigenfunctions of $L$ in the separation/unmixing of the Boltzmann distribution into $m$ macrostates, analogous to the Perron-Frobenius eigenvector in Laplacian mixture models.
+Adapting the notation slightly from \cite{shall96}, the eigenfunctions of $L$ are denoted $\{\psi_i\}_{i = 0}^\infty$ and the eigenvalues are denoted as $\{\lambda_i\}_{i = 0}^\infty$.
+\subsection*{Discrete Approximation}\label{sec:dapprox}
+For sufficiently low dimensional nonnegative functions evaluated on evenly-spaced grids, the discrete approximation of \eqref{eq:smol} can be used via a nearest-neighbor Laplacian approximation to construct a sparse approximation of $L$ in \eqref{eq:L} with reflecting boundary conditions as described in \cite{banush}.
+The discrete approximation approach is useful for applications where the mixture function $f(x)$ can be evaluated on a grid such as density estimates generated by histograms or kernel density estimation.
+This was the method used for the numerical example described in Section \ref{sec:density}.
+
+Discrete approximations can also be applied to nonnegative signals such as spectral density estimates and 2 and 3 dimensional images sampled on evenly-spaced nodes after preprocessing to remove random noise.
+Since discrete approximations of Smoluchowski equations are microscopically reversible continuous-time Markov chains (CTMCs), macrostate models can also be constructed by embedding input data into Markov chains.
+
+Just like in the continuous case for \eqref{eq:L0}, discrete transition rate matrices for time reversible processes are similar to symmetric matrices.
+Similarly their eigenvalues and eigenvectors are real and the eigenvectors corresponding to distinct eigenvalues are orthogonal.
+\subsection*{Previous Formulations}
+The \emph{macrostate data clustering} algorithm is an earlier formulation developed in \cite{korenblum, white}.
+Detailed comparisons between the two formulations are not included here because the previous methods required customized algorithm implementations that limited their practicality. % in order to focus on the applications of the reformulation derived here.
+These earlier papers did not explicitly mention that macrostates are a type of finite mixture model of the form \eqref{eq:fmm}, nor did they mention the Bayes classifier posterior form and probabilistic interpretations of \eqref{eq:pclass}.
+% The probabilistic nature of \eqref{eq:wfmm} was not explicitly mentioned previously, and more generic terms such as \emph{fuzzy spectral clustering} and \emph{cluster assignment strengths} were used to avoid misinterpretation.
+
+Previous formulations used a different objective function and a different global optimization solver.
+The objective function was a logarithm of the geometric mean uncertainty which led to a nonlinear optimization problem that was not as well-studied as quadratic programs.
+
+Here, the original the objective function from \cite{shall96} is used, providing a more standard concave quadratic programming (QP) problem that can be more easily solved.
+Linearly constrained concave QPs can be solved using established heuristics such as modified Frank-Wolfe type procedures \cite{pard93}.
+
+Another difference is that in \cite{korenblum, white} only unbounded inverse quadratic similarity measures and soft Gaussian thresholds that do not directly control sparsity were tested.
+Here, other choices of similarity/distance measures are tested and the use of hard thresholding is examined to directly control sparsity of the resulting Laplacian matrix used as the primary input into the algorithm.
+
+The previous formulation defined in \cite{korenblum} did not mention the applications to density function unmixing/separation via \eqref{eq:mmm} and the connection to discrete approximations of Smoluchowski equations as described in section \ref{sec:dapprox}.
+\subsection*{Data Spectroscopy}
+In some examples tested (data not shown), hard-thresholded Laplacian mixture model results were found to agree perfectly with the output of another algorithm, called Data Spectroscopy \cite{shi09}.
+Data spectroscopy does not provide a full probabilistic model including the soft/fuzzy cluster assignment probabilities and involves kernel-specific heuristics for choosing the appropriate cluster number.
+But, at the level of the hard/crisp cluster labels, Data Spectroscopy is an algorithm can provide accurate estimates of hard thresholded Laplacian mixture model solutions when the same Laplacian matrices are used.
+
+This was an unexpected outcome worthy of better understanding and more study.
+The Data Spectroscopy software (DaSpec) was obtained online from the original author's website.
+% http://www.stat.osu.edu/~taoshi/software/software.html.
+
+The mathematical arguments used to prove the accuracy of data spectroscopy in \cite{shi09} and other kernelized spectral clustering methods described more recently in \cite{schi15} may yield better understanding of the assumptions used in Laplacian mixture models as well.
+Likewise, the physical interpretations of macrostates in terms of drift-diffusions and the relationship of the kernel scaling parameter to the temperature or energy of the Brownian motion of generating stochastic processes may provide additional insight into the accuracy of the approximations used by data spectroscopy.
+It may be possible to hybridize Laplacian mixture models and data spectroscopic methods so that they can be used consistently on different analyses within the same project.
+For example, data spectroscopy could be used during the distance/similarity/kernel function learning step.
+
+\nolinenumbers
+%\bibliography{laplacian_mixture_models}
+\begin{thebibliography}{10}
+
+\bibitem{ev96}
+Everitt BS.
+\newblock An introduction to finite mixture distributions.
+\newblock Statistical Methods in Medical Research;5:107--127.
+
+\bibitem{bishop}
+Bishop CM.
+\newblock Pattern recognition and machine learning.
+\newblock Springer; 2006.
+
+\bibitem{jordan06}
+McAuliffe JD, Blei DM, Jordan MI.
+\newblock Nonparametric empirical Bayes for the Dirichlet process mixture
+  model.
+\newblock Stat Comput. 2006;16:5--14.
+
+\bibitem{azran}
+Azran A, Ghahramani Z.
+\newblock Spectral methods for automatic multiscale data clustering.
+\newblock In: Computer Vision and Pattern Recognition, 2006 IEEE Computer
+  Society Conference on. vol.~1. IEEE; 2006. p. 190--197.
+
+\bibitem{njw}
+Ng AY, Jordan MI, Weiss Y.
+\newblock On spectral clustering: Analysis and an algorithm.
+\newblock In: Advances in neural information processing systems; 2002. p.
+  849--856.
+
+\bibitem{gould14}
+Gould S, Zhao J, He X, Zhang Y.
+\newblock Superpixel graph label transfer with learned distance metric.
+\newblock In: European Conference on Computer Vision. Springer; 2014. p.
+  632--647.
+
+\bibitem{pearson}
+Pearson K.
+\newblock Contributions to the mathematical theory of evolution.
+\newblock Philosophical Transactions of the Royal Society of London A.
+  1894;185:71--110.
+
+\bibitem{fasshauer2007meshfree}
+Fasshauer G.
+\newblock Meshfree approximation methods with MATLAB.
+\newblock World Scientific; 2007.
+
+\bibitem{dropseq}
+et~al EZM.
+\newblock Highly Parallel Genome-wide Expression Profiling of Individual Cells
+  Using Nanoliter Droplets.
+\newblock Cell. 2015;161:1202--1214.
+
+\bibitem{dropseqrev}
+Heath JR.
+\newblock Nanotechnologies for biomedical science and translational medicine.
+\newblock Proceedings of the National Academy of Sciences.
+  2015;112(47):14436--14443.
+
+\bibitem{pard93}
+Pardalos PM, Guisewite G.
+\newblock Parallel computing in nonconvex programming.
+\newblock Annals of Operations Research. 1993;43(2):87--107.
+
+\bibitem{communities}
+Porter MA, Onnela JP, Mucha PJ.
+\newblock Communities in networks.
+\newblock Notices of the AMS. 2009;56(9):1082--1097, 1164--1166.
+
+\bibitem{yang2015}
+Yang J, Leskovec J.
+\newblock Defining and evaluating network communities based on ground-truth.
+\newblock Knowledge and Information Systems. 2015;42(1):181--213.
+
+\bibitem{modularity}
+Lancichinetti A, Fortunato S.
+\newblock Limits of modularity maximization in community detection.
+\newblock Physical review E. 2011;84(6):066122.
+
+\bibitem{hitpredict}
+Patil A, Nakai K, Nakamura H.
+\newblock HitPredict: a database of quality assessed protein--protein
+  interactions in nine species.
+\newblock Nucleic acids research. 2010;39(suppl\_1):D744--D749.
+
+\bibitem{banush}
+Banushkina P, Schenk O, Meuwly M.
+\newblock Efficiency considerations in solving smoluchowski equations for rough
+  potentials.
+\newblock In: Computational Life Sciences. Springer; 2005. p. 208--216.
+
+\bibitem{pard}
+Pardalos PM, Shalloway D, Xue G.
+\newblock Optimization methods for computing global minima of nonconvex
+  potential energy functions.
+\newblock Journal of Global Optimization. 1994;4(2):117--133.
+
+\bibitem{korenblum}
+Korenblum D, Shalloway D.
+\newblock Macrostate data clustering.
+\newblock Physical Review E. 2003;67(5):056704.
+
+\bibitem{gleichpage}
+Gleich DF.
+\newblock PageRank beyond the Web.
+\newblock SIAM Review. 2015;57(3):321--363.
+
+\bibitem{shall96}
+Shalloway D.
+\newblock Macrostates of classical stochastic systems.
+\newblock The Journal of chemical physics. 1996;105(22):9986--10007.
+
+\bibitem{risken}
+Risken H.
+\newblock The Fokker Planck Equation.
+\newblock In: The Fokker-Planck Equation. Springer; 1996. p. 63--95.
+
+\bibitem{white}
+White BS, Shalloway D.
+\newblock Efficient uncertainty minimization for fuzzy spectral clustering.
+\newblock Physical Review E. 2009;80(5):056705.
+
+\bibitem{shi09}
+Shi T, Belkin M, Yu B.
+\newblock Data spectroscopy: Eigenspaces of convolution operators and
+  clustering.
+\newblock The Annals of Statistics. 2009;37:3960--3984.
+
+\bibitem{schi15}
+Schiebinger G, Wainwright MJ, Yu B, et~al.
+\newblock The geometry of kernelized spectral clustering.
+
+\end{thebibliography}
+
+\end{document}
+
